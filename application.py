@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hb():
-    return "Welcome to HeartByte.io"
+    return "HeartByte.io"
 
 if __name__ == '__main__':
     app.run(debug=True)    
