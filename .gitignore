@@ -1,3 +1,6 @@
 # Python
 __pycache__
-hb
+heartbyte-venv/
+
+# VS Code
+.vscode/
