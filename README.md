@@ -1,7 +1,7 @@
 # ab-heartbyte
 Test Web Application using Flask framework.
 - The web app is currently hosted on Microsoft Azure Cloud. 
-- Github -> Microsoft Azure Cloud CD(Conntinous Deployment) pipeline has been setup. 
+- Github -> Microsoft Azure Cloud CD(Continous Deployment) pipeline has been setup. 
 - Note: That I only host the web-app during development so it might not be up and running all the time. 
 
 ## How to run locally
