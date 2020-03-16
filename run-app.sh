@@ -1,4 +1,4 @@
-#! /usr/bin/bash
+#! /bin/bash
 
 function run(){
     pip install -r requirements.txt && 

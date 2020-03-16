@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Flask App</title>
+    {% endif %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <body>
+   <div class="home">
+     <h1>ab-heartbyte</h1>
+     <p>[WORK IN PROGRESS]: Web-app {{ title }} running on Microsoft Azure</p>
+   </div>
+  </body>
+</html>
