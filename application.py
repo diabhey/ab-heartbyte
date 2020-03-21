@@ -5,15 +5,11 @@ from flask import Flask, render_template, Response
 app = Flask(__name__)
 
 @app.route('/')
-def index():
-    """Video streaming home page."""
-    return render_template('index.html')
+def home():
+    return render_template('home.html')
 
 def gen():
-    """Video streaming generator function."""
-    cap = cv2.VideoCapture(-1)
-
-    # Read until video is completed
+    cap = cv2.VideoCapture(0)
     while(cap.isOpened()):
       # Capture frame-by-frame
         ret, img = cap.read()
@@ -24,8 +20,13 @@ def gen():
             time.sleep(0.1)
         else: 
             break
+
+@app.route('/video_feed')
+def video_feed():
+    return Response(gen(),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')            
     
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(debug=True)
 
 
