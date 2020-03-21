@@ -3,7 +3,8 @@
 function run(){
     pip install -r requirements.txt && 
     export FLASK_APP=application.py && 
-    flask run
+    flask run 
+    # flask run --host=ip_addr
 }
 
 echo "Note: Run the app in your own virtual environment(venv)!
