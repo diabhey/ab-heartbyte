@@ -3,8 +3,7 @@
 function run(){
     pip install -r requirements.txt && 
     export FLASK_APP=application.py && 
-    flask run 
-    # flask run --host=ip_addr
+    flask run
 }
 
 echo "Note: Run the app in your own virtual environment(venv)!
@@ -15,8 +14,3 @@ if { python3 --version | grep -q "^Python[[:space:]]*[3]\.[[:digit:]]*[\.]*[[:di
 else
     echo "Install Python 3!";
 fi
-
-
-
-
-

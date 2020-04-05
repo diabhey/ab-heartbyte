@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    {% if title %}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>Flask App</title>
-    {% endif %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-  <body>
-   <div class="home">
-     <h1>ab-heartbyte</h1>
-     <p>[WORK IN PROGRESS]: Web-app {{ title }} running on Microsoft Azure</p>
-     <img src="{{ url_for('video_feed') }}">
-   </div>
-  </body>
+    <body>
+      <div class="home">
+        <h1>ab-heartbyte</h1>
+        <p>Web app running on Microsoft Azure</p>
+      <video id="player" controls></video>
+       <script>
+         var player = document.getElementById('player');
+         var handleSuccess = function(stream) {
+           player.srcObject = stream;
+         };
+         navigator.mediaDevices.getUserMedia({ video: true })
+           .then(handleSuccess)    
+       </script>
+      </div> 
+    </body>
 </html>
