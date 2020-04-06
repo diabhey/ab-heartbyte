@@ -1,14 +1,16 @@
-FROM ubuntu:16.04
+FROM python:3.7-alpine
 
-RUN apt-get update -y && \
-    apt-get install -y python-pip python-dev
+RUN adduser -D heartbyte
+WORKDIR /home/heartbyte
+COPY . app
 
-COPY . /app
+RUN pip install -r app/requirements.txt
+RUN chmod +x app/start.sh
 
-WORKDIR /app
+ENV FLASK_APP app/application.py
 
-RUN pip install -r requirements.txt
+RUN chown -R heartbyte:heartbyte ./
+USER heartbyte
+EXPOSE 5001
 
-ENTRYPOINT [ "python" ]
-
-CMD [ "application.py" ]
+ENTRYPOINT ["app/start.sh"]
