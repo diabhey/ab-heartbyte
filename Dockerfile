@@ -1,16 +1,9 @@
-FROM python:3.7-alpine
+FROM busybox:latest
 
-RUN adduser -D heartbyte
-WORKDIR /home/heartbyte
-COPY . app
+ADD templates/index.html /www/index.html
 
-RUN pip install -r app/requirements.txt
-RUN chmod +x app/start.sh
+EXPOSE 8000
+HEALTHCHECK CMD nc -z localhost 8000
 
-ENV FLASK_APP app/application.py
-
-RUN chown -R heartbyte:heartbyte ./
-USER heartbyte
-EXPOSE 5001
-
-ENTRYPOINT ["app/start.sh"]
+# Create a basic webserver and run it until the container is stopped
+CMD trap "exit 0;" TERM INT; httpd -p 8000 -h /www -f & wait
