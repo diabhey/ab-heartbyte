@@ -14,3 +14,4 @@ USER heartbyte
 EXPOSE 5001
 
 ENTRYPOINT ["app/start.sh"]
+
