@@ -14,3 +14,4 @@ if { python3 --version | grep -q "^Python[[:space:]]*[3]\.[[:digit:]]*[\.]*[[:di
 else
     echo "Install Python 3!";
 fi
+
