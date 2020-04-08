@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# Script to run the application locally(for dev and test purpose)
+cd app/ 
+
 function run(){
     pip install -r requirements.txt && 
     export FLASK_APP=application.py && 

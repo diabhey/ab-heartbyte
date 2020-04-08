@@ -1,10 +1,21 @@
-FROM busybox:latest
+  
+FROM python:3.7-alpine
 
-ADD templates/index.html /www/index.html
+RUN apk update && apk add dos2unix 
+RUN adduser -D heartbyte
+WORKDIR /home/heartbyte
 
-EXPOSE 8000
-HEALTHCHECK CMD nc -z localhost 8000
+COPY . app
+RUN pip install -r app/requirements.txt
+#For Windows host only
+RUN  dos2unix app/start.sh 
+#For Linux host only
+# RUN  chmod +x app/start.sh 
 
-# Create a basic webserver and run it until the container is stopped
-CMD trap "exit 0;" TERM INT; httpd -p 8000 -h /www -f & wait
+ENV FLASK_APP app/application.py
+RUN chown -R heartbyte:heartbyte ./
+USER heartbyte
+EXPOSE 5001
+
+ENTRYPOINT ["app/startup.sh"]
 
