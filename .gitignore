@@ -1,6 +1,7 @@
 # Python
 __pycache__
 hb/
+mongodb/
 
 # VS Code
 .vscode/
