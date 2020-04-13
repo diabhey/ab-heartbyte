@@ -22,7 +22,6 @@ Test Web Application using Flask framework.
 The flask app will be running on http://127.0.0.1:5000/
 
 ## Author
-bigillu (Abhimanyu Selvan) is the co-author and maintainer of this application.
-gandrein (Andrei Gherghescu) is the co-author.
-
-Follow me on [Twitter.](http://www.twitter.com/a_bigillu)
+* bigillu (Abhimanyu Selvan) is the co-author and maintainer of this application.
+  * follow me on [Twitter.](http://www.twitter.com/a_bigillu) 
+* gandrein (Andrei Gherghescu) is the co-author.
