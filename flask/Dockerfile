@@ -1,16 +1,16 @@
-  
+
 FROM python:3.7-alpine
 
-RUN apk update && apk add dos2unix 
+RUN apk update && apk add dos2unix
 RUN adduser -D heartbyte
 WORKDIR /home/heartbyte
 
 COPY . app
 RUN pip install -r app/requirements.txt
 #For Windows host only
-RUN  dos2unix app/startup.sh 
+RUN  dos2unix app/startup.sh
 #For Linux host only
-# RUN  chmod +x app/startup.sh 
+# RUN  chmod +x app/startup.sh
 
 ENV FLASK_APP app/application.py
 RUN chown -R heartbyte:heartbyte ./
