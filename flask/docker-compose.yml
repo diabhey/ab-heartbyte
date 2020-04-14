@@ -23,7 +23,7 @@ services:
 
   frontend:
     image: heartbyte:latest
-    build: . 
+    build: .
     environment:
       DB_HOST: mongodb
       DEBUG: "True"

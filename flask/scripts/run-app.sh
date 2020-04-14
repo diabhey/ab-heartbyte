@@ -1,8 +1,11 @@
 #! /bin/bash
 
+sourceDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+appDir="/.."
+
 function run(){
-    pip install -r requirements.txt && 
-    export FLASK_APP=application.py && 
+    pip install -r "${sourceDir}${appDir}"/requirements.txt &&
+    export FLASK_APP="${sourceDir}${appDir}"/application.py &&
     flask run
 }
 
