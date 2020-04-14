@@ -11,13 +11,13 @@ Web Application using Flask framework.
 
 **Run**
 - ```bash
-      #Set up your venv
-      python3 -m venv hb
-      source hb/bin/activate
+  # Set up your venv
+  python3 -m venv hb
+  source hb/bin/activate
   ```    
--   ```bash
-     ./flask/scripts/run-app.sh
-      ```
+- ```bash
+  ./flask/scripts/run-app.sh
+  ```
 - The flask app will be running on http://localhost:5000/
 
 ## How to run the app on Docker(Windows, Linux)
