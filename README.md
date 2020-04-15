@@ -32,6 +32,9 @@ Web Application using Flask framework.
   ```    
 - The flask app will be running on http://localhost:5001/
 
+## Contributing to ab-heartbyte
+Refer to [CONTRIBUTING.md](CONTRIBUTING.md)
+
 ## Author
 * bigillu (Abhimanyu Selvan) is the co-author and maintainer of this application.
   * follow me on [Twitter.](http://www.twitter.com/a_bigillu) 
