@@ -2,28 +2,25 @@
 Web Application using Flask framework.
 - The web app is currently hosted on Microsoft Azure Cloud.
 - Github -> Microsoft Azure Cloud CD(Continous Deployment) pipeline has been setup.
+- Automated docker builds are setup using Github Actions
 - Note: The web-app is only hosted on Azure during deployment tests.
 
-## How to run locally(on Linux)
+## How to run the application the easy way
 
 **Prerequisites**
-- Python 3.6 or higher
+- Docker
 
 **Run**
 - ```bash
-  # Set up your venv
-  python3 -m venv hb
-  source hb/bin/activate
+  # At the moment, only the contributors can access the registry(private)
+  # Pull the latest ab-heartbyte docker image
+  docker pull heartbyte/ab-heartbyte
+  # Run it
+  docker run --rm -it  -p 5001:5001/tcp heartbyte/ab-heartbyte:latest
   ```    
-- ```bash
-  ./flask/scripts/run-app.sh
-  ```
-- The flask app will be running on http://localhost:5000/
+- The flask app will be running on http://localhost:5001/
 
-## How to run the app on Docker(Windows, Linux)
-
-**Prerequisites**
-- Docker 
+## For the folks who want to build the docker image
 
 **Run**
 - ```bash
