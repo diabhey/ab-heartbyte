@@ -1,0 +1,26 @@
+name: ab-heartbyte docker build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker login
+      env: 
+        DOCKER_ID: ${{ SECRETS.DOCKER_HUB_ID }}
+        DOCKER_KEY: ${{ SECRETS.DOCKER_HUB_KEY }}
+      run: |
+        echo "$DOCKER_KEY" | docker login docker.io --username $DOCKER_ID  --password-stdin
+    - name: ab-heartbyte build
+      run: |
+        docker build ./flask -t heartbyte/ab-heartbyte:latest             
+    - name: ab-heartbyte push 
+      run : |
+        docker push heartbyte/ab-heartbyte:latest
