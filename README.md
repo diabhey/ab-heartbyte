@@ -1,4 +1,6 @@
 # ab-heartbyte
+![ab-heartbyte docker build](https://github.com/bigillu/ab-heartbyte/workflows/ab-heartbyte%20docker%20build/badge.svg?branch=master&event=push)
+
 Web Application using Flask framework.
 - The web app is currently hosted on Microsoft Azure Cloud.
 - Github -> Microsoft Azure Cloud CD(Continous Deployment) pipeline has been setup.
